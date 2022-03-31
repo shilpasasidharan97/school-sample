@@ -1,0 +1,22 @@
+.login {
+    position: absolute;
+    right: 460px;
+    font-size: 15px;
+    top: 400px;
+}
+.img-fluid{
+    height: 200px;
+    width: 150px;
+}
+q{
+    /* margin-top: 500px;
+    font-size: xx-large;
+    font-weight: 800;
+    word-spacing: 10px;
+    font-style: italic; */
+    max-width: 20em;
+    margin: 1em;
+    font: 1.8rem/1.4 Georgia, serif;
+    text-indent: -0.45em;
+    
+}

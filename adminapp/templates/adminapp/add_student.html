@@ -1,0 +1,243 @@
+{% extends 'master.html' %}
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+
+<div class="container-fluid">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Student name <b>(ID)</b></h2>
+                </div>
+            </div>
+        </div>
+
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Upload Profile Photo -->
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="profile-pic-div">
+                        <img src="{% static 'images/profile.png' %}" class="img-fluid"  id="photo">
+                        <input type="file" id="file" name="profile">
+                        <label for="file" id="uploadBtn">Choose Photo</label>
+                    </div>
+                </div>
+            </div><br><br><br><br><br>
+
+            <!-- Table starting -->
+            <div class="row"></div>
+
+            <!-- Basic Details -->
+            <div class="d-grid gap-2" style="margin-top:5px;">
+                <button class="btn btn-primary" id="btn1" type="button">Basic Details</button>
+            </div>
+
+            <div id="form1"><br>
+                <div class="row">
+                    <div class="col">
+                        <!--Name field-->
+                        <input type="text" class="form-control col-lg-10" name="name" placeholder="Enter your Name">
+                    </div>
+                    <div class="col">
+                        <div class="">
+                            <select class="custom-select form-control col-lg-10" name="gender" id="inputGroupSelect02">
+                                <option selected>Choose Gender...</option>
+                                <option value="1">Female</option>
+                                <option value="2">Male</option>
+                                <option value="3">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <input type="date" class="form-control col-lg-10" name="dob" placeholder="Date of birth">
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control col-lg-10" name="age" placeholder="Age" min="1">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" name="religion" placeholder="Religion">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" name="cast" placeholder="Cast">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" name="place" placeholder="Place">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" name="dist" placeholder="District">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" name="nationality" placeholder="Nationality">
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control col-lg-10" name="aadhar" placeholder="Adhar Number">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <input type="email" class="form-control col-lg-10" name="email" placeholder="Email id">
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control col-lg-10" name="phn" placeholder="Phone Number">
+                    </div>
+                </div><br>
+            </div>
+
+
+            <!-- Class DETAILS -->
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" id="btn2" type="button">Class Details</button>
+            </div>
+
+            <div id="form2"><br>
+                <div class="row">
+                    <div class="col">
+                        <input type="number" class="form-control col-lg-10" name="regnum" placeholder="Registration No">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <input type="number" class="form-control col-lg-10" name="class" placeholder="Class">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" name="division" placeholder="Division">
+                    </div>
+                </div><br>
+            </div>
+
+
+            <!-- Gaurdian Details -->
+            <div class="d-grid gap-2" style="margin-top:5px;">
+                <button class="btn btn-primary" id="btn3" type="button">Gaurdian Details</button>
+            </div><br>
+
+            <div id="form3"><br>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" name="fname" placeholder="Father Name">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" name="mname" placeholder="Mother Name">
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" min="0" name="focc" placeholder="Occupation of Father">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" min="0" name="mocc" placeholder="Occupation of Mother">
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col">
+                        <input type="number" class="form-control col-lg-10" name="pphn" placeholder="Phone Number">
+                    </div>
+                    <div class="col">
+                        <input type="email" class="form-control col-lg-10" name="pemail" placeholder="Email">
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col">
+                        <!-- <input type="text" class="form-control col-lg-10" placeholder="Address"> -->
+                        <textarea name="address" id="" class="form-control col-lg-10" cols="30" rows="6"
+                            placeholder="Address"></textarea>
+                    </div>
+                </div><br>
+            </div>
+
+            <div class="d-grid gap-2" style="margin-top:5px;">
+                <input type="submit" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+    <span style="margin-left: 580px;"><b><i>{{msg}}</i></b></span>
+
+
+
+
+    <script>
+        //declearing html elements
+
+        const imgDiv = document.querySelector('.profile-pic-div');
+        const img = document.querySelector('#photo');
+        const file = document.querySelector('#file');
+        const uploadBtn = document.querySelector('#uploadBtn');
+
+        //if user hover on img div 
+
+        imgDiv.addEventListener('mouseenter', function () {
+            uploadBtn.style.display = "block";
+        });
+
+        //if we hover out from img div
+
+        imgDiv.addEventListener('mouseleave', function () {
+            uploadBtn.style.display = "none";
+        });
+
+        //lets work for image showing functionality when we choose an image to upload
+
+        //when we choose a foto to upload
+
+        file.addEventListener('change', function () {
+            //this refers to file
+            const choosedFile = this.files[0];
+
+            if (choosedFile) {
+
+                const reader = new FileReader(); //FileReader is a predefined function of JS
+
+                reader.addEventListener('load', function () {
+                    img.setAttribute('src', reader.result);
+                });
+
+                reader.readAsDataURL(choosedFile);
+            }
+        });
+
+
+        // Form hide and show using jquery
+        $(document).ready(function () {
+            $("#form1").hide()
+            $("#btn1").click(function () {
+                $("#form1").toggle()
+            })
+        })
+
+        $(document).ready(function () {
+            $("#form2").hide()
+            $("#btn2").click(function () {
+                $("#form2").toggle()
+            })
+        })
+        $(document).ready(function () {
+            $("#form3").hide()
+            $("#btn3").click(function () {
+                $("#form3").toggle()
+            })
+        })
+
+    </script>
+
+    {% endblock %}

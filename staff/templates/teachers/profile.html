@@ -1,0 +1,276 @@
+{% extends 'staff_master.html' %}
+{% block content %}
+
+{% load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+
+<div class="container-fluid">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Staff name <b>(ID)</b></h2>
+                </div>
+            </div>
+        </div>
+
+            <!-- Upload Profile Photo -->
+            {% for p in profile %}
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="profile-pic-div">
+                        <img src="{{p.t_profile.url}}" class="img-fluid" style="height: 250px;" id="photo">
+                        <input type="file" id="file" name="profile">
+                        <label for="file" id="uploadBtn">Choose Photo</label>
+                    </div>
+                </div>
+            </div><br><br><br><br><br>
+
+            <!-- Table starting  -->
+            <div class="row"></div>
+
+
+            <!-- Basic Details -->
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" id="btn1" type="button">Basic Details</button>
+            </div>
+            <div id="form1" style="border: 1px grey solid;"><br>
+                <div class="row">
+                    <div class="col">
+                        <!--Name field-->
+                        <label for="">Name:</label>
+                        <label for=""><h6>{{p.t_name}}</h6></label>
+                    </div>
+                    <div class="col">
+                        <div class="">
+                            <label for="">Gender:</label>
+                        <label for=""><h6>{{p.gender}}</h6></label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="">Date of birth:</label>
+                        <label for=""><h6>{{p.dob}}</h6></label>
+                    </div>
+                </div><br>
+
+
+                <div class="row">
+                    
+                    <div class="col">
+                        <label for="">Age:</label>
+                        <label for=""><h6>{{p.age}}</h6></label>
+                    </div>
+                    <div class="col">
+                        <label for="">Religion:</label>
+                        <label for=""><h6>{{p.religion}}</h6></label>
+                    </div>
+                    <div class="col">
+                        <label for="">Cast:</label>
+                        <label for=""><h6>{{p.cast}}</h6></label>
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="">place:</label>
+                        <label for=""><h6>{{p.place}}</h6></label>
+                    </div>
+                    <div class="col">
+                        <label for="">District:</label>
+                        <label for=""><h6>{{p.district}}</h6></label>
+                    </div>
+                    <div class="col">
+                        <label for="">Nationality:</label>
+                        <label for=""><h6>{{p.nationality}}</h6></label>
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="">Aadhar Number:</label>
+                        <label for=""><h6>{{p.aadhar_num}}</h6></label>
+                    </div>
+                    <div class="col">
+                        <label for="">Email Id:</label>
+                        <label for=""><h6>{{p.email_id}}</h6></label>
+                    </div>
+                    <div class="col">
+                        <label for="">Phone Number:</label>
+                        <label for=""><h6>{{p.phone_number}}</h6></label>
+                    </div>
+                </div><br>
+
+                
+                <div class="row">
+                    <div class="col">
+                        <label for="">Handling Class:</label>
+                        <label for=""><h6>{{p.handling_class}}</h6></label>
+                    </div>
+                    <div class="col">
+                        <label for="">Division:</label>
+                        <label for=""><h6>{{p.division}}</h6></label>
+                    </div>
+                    <div class="col">
+                        <label for="">Subject:</label>
+                        <label for=""><h6>{{p.subject}}</h6></label>
+                    </div>
+                    
+                </div><br>
+            </div>
+
+
+            <!-- EDUCATIONAL DETAILS -->
+            <div class="d-grid gap-2" style="margin-top:5px;">
+                <button class="btn btn-primary" id="btn2" type="button">Educational Details</button>
+            </div><br>
+
+            <div id="form2">
+                <div class="row">
+                    <div class="col">
+                        <label for="">Qualification:</label>
+                        <label for=""><h6>{{p.qualification}}</h6></label>
+                    </div>
+                    <div class="col">
+                        <label for="">College Name:</label>
+                        <label for=""><h6>{{p.college_name}}</h6></label>
+                    </div>
+                </div><br>
+                <!-- <div class="row">
+                    <div class="col">
+                        <label for="">Subject:</label>
+                        <label for=""></label>
+                    </div>
+                </div><br> -->
+            </div>
+
+
+            <!-- Professional Details -->
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" id="btn3" type="button">Professional Details</button>
+            </div><br>
+
+            <div id="form3">
+                <div class="row">
+                    <div class="col">
+                        <label for="">Institution :</label>
+                        <label for=""><h6>{{p.instituation_name}}</h6></label>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <label for="">Year of experience:</label>
+                        <label for=""><h6>{{p.year_of_experience}}</h6></label>
+                    </div>
+                </div><br>
+            </div>
+            {% endfor %}
+            <!-- <div class="d-grid gap-2" style="margin-top:5px;">
+                <input type="submit" class="btn btn-success">
+            </div> -->
+            
+            <a href="#" class="btn btn-success btn-md active" role="button" aria-pressed="true" style="margin-left: 1000px;">UPDATE</a>
+
+        
+
+
+
+
+
+    </div>
+
+
+    <script>
+        //declearing html elements
+
+        const imgDiv = document.querySelector('.profile-pic-div');
+        const img = document.querySelector('#photo');
+        const file = document.querySelector('#file');
+        const uploadBtn = document.querySelector('#uploadBtn');
+
+        //if user hover on img div 
+
+        imgDiv.addEventListener('mouseenter', function () {
+            uploadBtn.style.display = "block";
+        });
+
+        //if we hover out from img div
+
+        imgDiv.addEventListener('mouseleave', function () {
+            uploadBtn.style.display = "none";
+        });
+
+        //lets work for image showing functionality when we choose an image to upload
+
+        //when we choose a foto to upload
+
+        file.addEventListener('change', function () {
+            //this refers to file
+            const choosedFile = this.files[0];
+
+            if (choosedFile) {
+
+                const reader = new FileReader(); //FileReader is a predefined function of JS
+
+                reader.addEventListener('load', function () {
+                    img.setAttribute('src', reader.result);
+                });
+
+                reader.readAsDataURL(choosedFile);
+            }
+        });
+
+
+        // Form hide and show using jquery
+        $(document).ready(function () {
+            $("#form1").hide()
+            $("#btn1").click(function () {
+                $("#form1").toggle()
+            })
+        })
+        $(document).ready(function () {
+            $("#form2").hide()
+            $("#btn2").click(function () {
+                $("#form2").toggle()
+            })
+        })
+        $(document).ready(function () {
+            $("#form3").hide()
+            $("#btn3").click(function () {
+                $("#form3").toggle()
+            })
+        })
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

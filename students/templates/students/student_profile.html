@@ -1,0 +1,258 @@
+{% extends 'student_master.html' %}
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+
+<div class="container-fluid">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Student name <b>(ID)</b></h2>
+                </div>
+            </div>
+        </div>
+
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Upload Profile Photo -->
+            {% for p in student %}
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="profile-pic-div">
+                        <img src="{{p.s_profile.url}}" class="img-fluid"  id="photo">
+                        <input type="file" id="file" name="profile">
+                        <label for="file" id="uploadBtn">Choose Photo</label>
+                    </div>
+                </div>
+            </div><br><br><br><br><br>
+
+            <!-- Table starting -->
+            <div class="row"></div>
+
+            <!-- Basic Details -->
+            <div class="d-grid gap-2" style="margin-top:5px;">
+                <button class="btn btn-primary" id="btn1" type="button">Basic Details</button>
+            </div>
+
+
+            <div id="form1"><br>
+                <div class="row" style="text-align: center;align-items: justify;">
+                    <div class="col">
+                        <label for="">Name :</label>
+                        <label for="">{{p.s_name}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Gender :</label>
+                        <label for="">{{p.gender}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Date of Birth :</label>
+                        <label for="">{{p.dob}}</label>
+                    </div>
+                </div><br>
+
+                <div class="row" style="text-align: center;">
+                    <div class="col">
+                        <label for="">Age :</label>
+                        <label for="">{{p.age}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Religion :</label>
+                        <label for="">{{p.religion}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Cast :</label>
+                        <label for="">{{p.cast}}</label>
+                    </div>
+                </div><br>
+
+                
+                <div class="row" style="text-align: center;">
+                    <div class="col">
+                        <label for="">Place :</label>
+                        <label for="">{{p.place}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">District :</label>
+                        <label for="">{{p.district}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Nationality :</label>
+                        <label for="">{{p.nationality}}</label>
+                    </div>
+                </div><br>
+
+                <div class="row" style="text-align: center;">
+                    <div class="col">
+                        <label for="">Aadhar Number :</label>
+                        <label for="">{{p.aadhar_num}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Email :</label>
+                        <label for="">{{p.email_id}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Phone Number :</label>
+                        <label for="">{{p.phone_number}}</label>
+                    </div>
+                </div><br>
+            </div><br>
+
+
+            <!-- Class DETAILS -->
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" id="btn2" type="button">Class Details</button>
+            </div>
+
+            <div id="form2"><br>
+                <div class="row" style="text-align: center;">
+                    <div class="col">
+                        <label for="">Registration Number :</label>
+                        <label for="">{{p.registration_num}}</label>
+                    </div>
+                </div><br>
+                <div class="row" style="text-align: center;">
+                    <div class="col">
+                        <label for="">Class :</label>
+                        <label for="">{{p.classs}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Division :</label>
+                        <label for="">{{p.division}}</label>
+                    </div>
+                </div><br>
+            </div>
+
+
+            <!-- Gaurdian Details -->
+            <div class="d-grid gap-2" style="margin-top:5px;">
+                <button class="btn btn-primary" id="btn3" type="button">Gaurdian Details</button>
+            </div><br>
+
+            <div id="form3"><br>
+                <div class="row" style="text-align: center;">
+                    <div class="col">
+                        <label for="">Father Name :</label>
+                        <label for="">{{p.father_name}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Mother Name :</label>
+                        <label for="">{{p.mother_name}}</label>
+                    </div>
+                </div><br>
+
+                <div class="row" style="text-align: center;">
+                    <div class="col">
+                        <label for="">Father Occupation :</label>
+                        <label for="">{{p.father_occupation}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Mother Occupation :</label>
+                        <label for="">{{p.mother_occupation}}</label>
+                    </div>
+                </div><br>
+
+                <div class="row" style="text-align: center;">
+                    <div class="col">
+                        <label for="">Phone Number :</label>
+                        <label for="">{{p.parents_phone}}</label>
+                    </div>
+                    <div class="col">
+                        <label for="">Email :</label>
+                        <label for="">{{p.parents_email}}</label>
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col">
+                        <!-- <input type="text" class="form-control col-lg-10" placeholder="Address"> -->
+                        <label for=""><textarea name="address" id="" class="form-control col-lg-10" cols="150" rows="6" placeholder="Address" disabled>{{p.address}}</textarea></label>
+                        
+                    </div>
+                </div><br>
+            </div>
+
+            <a href="#" class="btn btn-success btn-md active" role="button" style="margin-left: 1000px;" aria-pressed="true">Update</a>
+        </form>
+            {% endfor %}
+    </div>
+    <span style="margin-left: 580px;"><b><i>{{msg}}</i></b></span>
+
+
+
+
+    <script>
+        //declearing html elements
+
+        const imgDiv = document.querySelector('.profile-pic-div');
+        const img = document.querySelector('#photo');
+        const file = document.querySelector('#file');
+        const uploadBtn = document.querySelector('#uploadBtn');
+
+        //if user hover on img div 
+
+        imgDiv.addEventListener('mouseenter', function () {
+            uploadBtn.style.display = "block";
+        });
+
+        //if we hover out from img div
+
+        imgDiv.addEventListener('mouseleave', function () {
+            uploadBtn.style.display = "none";
+        });
+
+        //lets work for image showing functionality when we choose an image to upload
+
+        //when we choose a foto to upload
+
+        file.addEventListener('change', function () {
+            //this refers to file
+            const choosedFile = this.files[0];
+
+            if (choosedFile) {
+
+                const reader = new FileReader(); //FileReader is a predefined function of JS
+
+                reader.addEventListener('load', function () {
+                    img.setAttribute('src', reader.result);
+                });
+
+                reader.readAsDataURL(choosedFile);
+            }
+        });
+
+
+        // Form hide and show using jquery
+        $(document).ready(function () {
+            $("#form1").hide()
+            $("#btn1").click(function () {
+                $("#form1").toggle()
+            })
+        })
+
+        $(document).ready(function () {
+            $("#form2").hide()
+            $("#btn2").click(function () {
+                $("#form2").toggle()
+            })
+        })
+        $(document).ready(function () {
+            $("#form3").hide()
+            $("#btn3").click(function () {
+                $("#form3").toggle()
+            })
+        })
+
+    </script>
+
+    {% endblock %}

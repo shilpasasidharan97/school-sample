@@ -1,0 +1,153 @@
+{% extends 'staff_master.html' %}
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/css/home.css' %}">
+
+
+<div class="row ">
+    <div class="col-lg-12">
+        <h3>School managemnet System Quick Icons</h3>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-warning">
+                    <img
+                        src="https://img.icons8.com/external-inipagistudio-lineal-color-inipagistudio/64/000000/external-student-student-counselor-inipagistudio-lineal-color-inipagistudio.png" />
+                </div><br>
+            </div>
+            <div class="card-content"><br>
+                <p class="category"><strong> Students Under Me</strong></p>
+
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a href="{% url 'adminapp:managestudent' %}">See detailed report</a>&nbsp;&nbsp;
+                    <i class="material-icons">arrow_forward</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-success">
+                    <img
+                        src="https://img.icons8.com/external-inipagistudio-lineal-color-inipagistudio/64/000000/external-parents-school-counseling-inipagistudio-lineal-color-inipagistudio.png" />
+
+                </div><br>
+            </div>
+            <div class="card-content"><br>
+                <p class="category"><strong>Parents</strong></p>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a href="{% url 'adminapp:manageparents' %}">See detailed report</a>&nbsp;&nbsp;
+                    <i class="material-icons">arrow_forward</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-info">
+                    <img src="https://img.icons8.com/color/48/000000/teaching.png" />
+                </div><br>
+            </div>
+            <div class="card-content"><br>
+                <p class="category"><strong>Subject</strong></p>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a href="#pablo">See detailed report</a>&nbsp;&nbsp;
+                    <i class="material-icons">arrow_forward</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <div id="myDIV" class="header">
+            
+            <input type="text" id="myInput" placeholder="Title...">
+            <span onclick="newElement()" class="addBtn1">Add</span>
+          </div>
+          
+          <ul id="myUL">
+            <li></li>
+            <li class="checked1">Pay bills</li>
+            
+          </ul>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+
+<script>
+    // Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+//   var txt = document.createTextNode("\u00D7");
+//   span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+// var close = document.getElementsByClassName("close");
+// var i;
+// for (i = 0; i < close.length; i++) {
+//   close[i].onclick = function() {
+//     var div = this.parentElement;
+//     div.style.display = "none";
+//   }
+// }
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked1');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,218 @@
+{% extends 'master.html' %}
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6 box">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-warning">
+                    <img src="https://img.icons8.com/color/48/000000/student-female.png"/>
+                </div>
+            </div>
+            <div class="card-content">
+                <p class="category"><strong>Total Students</strong></p>
+                <h3 class="card-title">40</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-rose">
+                    <img src="https://img.icons8.com/color/48/000000/teacher.png"/>
+                </div>
+            </div>
+            <div class="card-content">
+                <p class="category"><strong>Total Teachers</strong></p>
+                <h3 class="card-title">15</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-success">
+                    <img src="https://img.icons8.com/color/48/000000/defend-family--v2.png"/>
+
+                </div>
+            </div>
+            <div class="card-content">
+                <p class="category"><strong>Number Of Parents</strong></p>
+                <h3 class="card-title">35</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-info">
+                    <img src="https://img.icons8.com/color/48/000000/event-accepted.png"/>
+                </div>
+            </div>
+            <div class="card-content">
+                <p class="category"><strong>Upcoming Events</strong></p>
+                <h3 class="card-title">5</h3>
+            </div>
+        </div>
+    </div>
+</div><br>
+<hr><br>
+
+
+<div class="row ">
+    <div class="col-lg-12">
+        <h3>School managemnet System Quick Icons</h3>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-warning">
+                    <img
+                        src="https://img.icons8.com/external-inipagistudio-lineal-color-inipagistudio/64/000000/external-student-student-counselor-inipagistudio-lineal-color-inipagistudio.png" />
+                </div><br>
+            </div>
+            <div class="card-content"><br>
+                <p class="category"><strong> Students</strong></p>
+
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a href="{% url 'adminapp:managestudent' %}">See detailed report</a>&nbsp;&nbsp;
+                    <i class="material-icons">arrow_forward</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-rose">
+                    <img
+                        src="https://img.icons8.com/external-inipagistudio-lineal-color-inipagistudio/64/000000/external-teacher-language-learning-inipagistudio-lineal-color-inipagistudio.png" />
+                </div><br>
+            </div>
+            <div class="card-content"><br>
+                <p class="category"><strong>Teachers</strong></p>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a href="{% url 'adminapp:manageteacher' %}">See detailed report</a>&nbsp;&nbsp;
+                    <i class="material-icons">arrow_forward</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-success">
+                    <img
+                        src="https://img.icons8.com/external-inipagistudio-lineal-color-inipagistudio/64/000000/external-parents-school-counseling-inipagistudio-lineal-color-inipagistudio.png" />
+
+                </div><br>
+            </div>
+            <div class="card-content"><br>
+                <p class="category"><strong>Parents</strong></p>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a href="{% url 'adminapp:manageparents' %}">See detailed report</a>&nbsp;&nbsp;
+                    <i class="material-icons">arrow_forward</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header">
+                <div class="icon icon-info">
+                    <img
+                        src="https://img.icons8.com/external-icongeek26-outline-gradient-icongeek26/64/000000/external-events-donation-and-charity-icongeek26-outline-gradient-icongeek26.png" />
+                </div><br>
+            </div>
+            <div class="card-content"><br>
+                <p class="category"><strong>Events</strong></p>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a href="#pablo">See detailed report</a>&nbsp;&nbsp;
+                    <i class="material-icons">arrow_forward</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="row">
+        {% comment %} <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header">
+                    <div class="icon icon-warning">
+                        <img
+                            src="https://img.icons8.com/external-photo3ideastudio-gradient-photo3ideastudio/64/4a90e2/external-exam-online-learning-photo3ideastudio-gradient-photo3ideastudio-1.png" />
+                    </div><br>
+                </div>
+                <div class="card-content"><br>
+                    <p class="category"><strong>EXam Schedules</strong></p>
+
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <a href="#">See detailed report</a>&nbsp;&nbsp;
+                        <i class="material-icons">arrow_forward</i>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header">
+                    <div class="icon icon-warning">
+                        <img
+                            src="https://img.icons8.com/external-inipagistudio-lineal-color-inipagistudio/64/4a90e2/external-class-student-activity-inipagistudio-lineal-color-inipagistudio.png" />
+                    </div><br>
+                </div>
+                <div class="card-content"><br>
+                    <p class="category"><strong>Class List</strong></p>
+
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <a href="{% url 'adminapp:classlist' %}">See detailed report</a>&nbsp;&nbsp;
+                        <i class="material-icons">arrow_forward</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header">
+                    <div class="icon icon-warning">
+                        <img
+                            src="https://img.icons8.com/external-inipagistudio-lineal-color-inipagistudio/64/4a90e2/external-payment-retail-company-inipagistudio-lineal-color-inipagistudio.png" />
+                    </div><br>
+                </div>
+                <div class="card-content"><br>
+                    <p class="category"><strong>Payment</strong></p>
+
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <a href="#pablo">See detailed report</a>&nbsp;&nbsp;
+                        <i class="material-icons">arrow_forward</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</div>
+
+{% endblock %}

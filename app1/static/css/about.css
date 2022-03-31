@@ -1,0 +1,27 @@
+
+.over_view{
+    text-align: justify;
+}
+.vision{
+    border: 0px;
+    margin-left: 160px;
+    padding-top: 50px;
+    height: 300px;
+    width: 400px;
+    border-radius: 25px;
+    background-color: hsla(0, 100%, 30%, 0.3);
+    box-shadow: 5px 8px 8px 8px hsla(0, 0%, 4%, 0.3);
+    
+
+}
+.m_v{
+    padding-top: 80px;
+    
+}
+.h4{
+    text-align: center;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(72, 72, 82), 0 0 5px rgb(53, 53, 65);
+    
+}
+
+

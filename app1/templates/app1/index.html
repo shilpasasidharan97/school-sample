@@ -1,0 +1,339 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCHOOL MANAGEMENT PROJECT</title>
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Stylesheet CDN -->
+  <link href="/static/css/index.css" rel="stylesheet">
+  <link href="/app1/static/css/style.css" rel="stylesheet">
+  
+</head>
+
+<body>
+  <div class="container-fluid mt-2 bg-transparent">
+
+   
+    <div class="row head sticky-top">
+      <div class="col-lg-1 col-sm-2 logo h1 pt-1"><img class="img-fluid" src="{% static 'images/logo.png' %}"></div>
+      <div class="col-lg-6 col-sm-6 pt-3 font-weight-bold text-primary">
+        <p class="h2">ROYAL PUBLIC SCHOOL
+        <p style="color: white;">(location)</p>
+        </p>
+      </div>
+      <!-- <div class="col-lg-4 text-right pt-5 text-end" >contact us</div> -->
+    </div>
+
+    <!-- Sidebar -->
+    <div class="row">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top0">
+        <div class="container-fluid">
+          <a class="navbar-brand disabled" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="">Home</a>
+              </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item">
+                <a class="nav-link active" href="">About</a>
+              </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item">
+                <a class="nav-link active" href="">Admission</a>
+              </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item">
+                <a class="nav-link active" href="">Gallery</a>
+              </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'app1:login' %}">ERP</a>
+              </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Contact us</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Announcement Section -->
+    <section>
+      <div class="row">
+        <div class="col-lg-12" style="background-color: rgb(152, 235, 235);">
+
+          <marquee direction="left">The exam will started on 11/02/2022........</marquee>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Slider Images -->
+    <section>
+      <div class="row">
+        <div class="co-lg-12">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'images/images/photogallery-2.jpg' %}" style="height: 500px;" class="d-block col-lg-12" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/images/login-img.jpg' %}" style="height: 500px;" class="d-block w-100" alt="...">
+              </div>
+              <!-- <div class="carousel-item">
+                  <img src="..." class="d-block w-100" alt="...">
+                </div> -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Welcome Notes -->
+    <section>
+      <div class="row">
+        <div class="col-lg-12  my-5">
+          <h2 class="text-center">Welcome....</h2>
+        </div>
+      </div>
+    </section>
+    <section class="mx-5 my-3">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, ea. Magnam a obcaecati
+            id porro laboriosam veritatis, accusantium dolore, beatae neque eum dignissimos sint. Esse culpa nihil
+            aliquam neque error.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam ex facilis nam impedit velit quod sunt
+            possimus eos illum. Ex dolores minima incidunt sed quidem. Ut necessitatibus earum minima non.</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-9 pt-3">
+          <p class="text-center">Read more....<a href="#"><img src="{% static 'images/images/arrow.png' %}" class="img-fluid" style="height: 15px;width: 30px;"></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clubs details -->
+    <section>
+      <div class="row bg-light ">
+        <div class="row my-4">
+          <div class="col-lg-12 col-sm-12">
+            <h3><u>Our Club</u></h3>
+          </div>
+        </div>
+        <div class="row row-cols-sm-2 row-cols-md-5 g-4 justify-content-center">
+          <div class="col-4">
+            <div class="card shadow h-100 rounded">
+              <div class="inner">
+                <img src="{% static 'images/images/nss.jpg' %}" class="card-img-top" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><b>NSS</b></h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card shadow h-100 rounded">
+              <div class="inner">
+                <img src="{% static 'images/images/echo.jpg' %}" class="card-img-top" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><b>ECO CLUB</b></h5>
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim aliquid, ut tenetur
+                  ipsum esse quo velit voluptatem impedit vel sunt natus fugit possimus debitis odio autem sint harum.
+                  Enim, nobis.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card h-100 shadow rounded">
+              <div class="inner">
+                <img src="{% static 'images/images/scout.png' %}" class="card-img-top" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">SCOUT AND GUIDES</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card h-100 shadow rounded">
+              <div class="inner">
+                <img src="{% static 'images/images/daddiction.png' %}" class="card-img-top" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">D_ADDICTION</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row bg-light">
+          <div class="row  row-cols-md-5 g-4 justify-content-center mb-5">
+            <div class="col-4">
+              <div class="card h-100 shadow rounded">
+                <div class="inner">
+                  <img src="{% static 'images/images/MUSIC.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><b>D_MEDLY</b></h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card h-100 shadow rounded">
+                <div class="inner">
+                  <img src="{% static 'images/images/SPORTS.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><b>SPORTS CLUB</b></h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section>
+      <div class="row">
+        <div class="col-lg-6 mt-4">
+          <h2>UPCOMING EVENTS</h2>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="row justify-content-center my-5">
+            <div class="bg-light rounded">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="{% static 'images/images/upcoming.jpg' %}" alt="First slide">
+                  </div>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5><b style="color: blue;">Event Heading</b></h5>
+                    <p style="text-align: left;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio
+                      nesciunt temporibus libero nam, maxime aperiam reprehenderit possimus voluptates est
+                      necessitatibus praesentium voluptate omnis numquam obcaecati, odit officia dicta tempora
+                      molestiae.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="row mt-5">
+      <footer id="footer">
+        <div class="footer-newsletter">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <h4>Our Newsletter</h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo ut modi, deserunt quam cumque
+                  dicta, eius est sint debitis quibusdam, et ducimus nesciunt. Distinctio, tempora itaque aliquid
+                  officia doloribus ducimus?</p>
+              </div>
+              <div class="col-lg-6">
+                <form action="" method="post"> <input type="email" name="email"><input type="submit" value="Subscribe">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-4 col-md-6 footer-contact">
+                <h4>Contact Us</h4>
+                <p> A108 Adam Street <br> New York, NY 535022<br> United States <br><br> <strong>Phone:</strong> +1
+                  5589 55488 55<br> <strong>Email:</strong> info@example.com<br> </p>
+              </div>
+              <div class="col-lg-4 col-md-6 footer-info">
+                <h3>About Royal</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea unde exercitationem fugit, blanditiis
+                  in ducimus nesciunt voluptatem libero iure! Accusamus, ea. Dolores, suscipit! Obcaecati, sint atque
+                  molestias error saepe dolorem.</p>
+                <!-- <div class="social-links mt-3"> <a href="/static/images/twitter.png" class="twitter"><i class="bx bxl-twitter"></i></a> <a href="/static/images/facebook.png" class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a> <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="copyright"> © Copyright <strong><span>Royal</span></strong>. All Rights Reserved </div>
+          <div class="credits"> Designed by <a href="#">SalvadorDevVE</a> </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

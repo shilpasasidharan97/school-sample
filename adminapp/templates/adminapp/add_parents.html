@@ -1,0 +1,195 @@
+{% extends 'master.html' %}
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+
+<div class="container-fluid">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Parents name</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Profile Photo -->
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="profile-pic-div">
+                    <img src="{% static 'images/profile.png' %}" class="img-fluid" id="photo">
+                    <input type="file" id="file">
+                    <label for="file" id="uploadBtn">Choose Photo</label>
+                </div>
+            </div>
+        </div><br><br><br><br><br>
+
+        <!-- Table starting -->
+        <div class="row"></div>
+
+        <!-- Student Details -->
+        <div class="d-grid gap-2" style="margin-top:5px;">
+            <button class="btn btn-primary" id="btn2" type="button">Student Details</button>
+        </div>
+
+        <form action="" method="" id="form2"><br>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" placeholder="Student Name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" placeholder="Student ID">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" placeholder="Class">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" placeholder="Division">
+                </div>
+            </div><br>
+        </form>
+
+        <!-- Parents Details -->
+        <div class="d-grid gap-2" style="margin-top:5px;">
+            <button class="btn btn-primary" id="btn1" type="button">Parents Details</button>
+        </div>
+        <form action="" method="" id="form1"><br>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" placeholder="Enter Father Name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" placeholder="Enter Mother Name">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" placeholder="Father Occupation">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" placeholder="Mother Occupation">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col">
+                    <input type="number" class="form-control col-lg-10" placeholder="Phone Number">
+                </div>
+                <div class="col">
+                    <input type="email" class="form-control col-lg-10" placeholder="Email id">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col">
+                    <textarea name="" id="" cols="30" rows="6" placeholder="Address" class="form-control col-lg-10"></textarea>
+                </div>
+            </div><br>
+        </form>
+
+        <!-- Bank Account Details -->
+        <div class="d-grid gap-2" style="margin-top:5px;">
+            <button class="btn btn-primary" id="btn3" type="button">Bank Account Details</button>
+        </div>
+
+        <form action="" method="" id="form3"><br>
+
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" placeholder="Account Holder Name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" placeholder="Branch Name">
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col">
+                    <input type="number" class="form-control col-lg-10" min="0" placeholder="Account Number">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control col-lg-10" min="0" placeholder="IFSC code">
+                </div>
+            </div><br>
+        </form>
+
+        <div class="d-grid gap-2" style="margin-top:5px;">
+            <button class="btn btn-primary" type="button">Submit</button>
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+        //declearing html elements
+
+        const imgDiv = document.querySelector('.profile-pic-div');
+        const img = document.querySelector('#photo');
+        const file = document.querySelector('#file');
+        const uploadBtn = document.querySelector('#uploadBtn');
+
+        //if user hover on img div 
+
+        imgDiv.addEventListener('mouseenter', function () {
+            uploadBtn.style.display = "block";
+        });
+
+        //if we hover out from img div
+
+        imgDiv.addEventListener('mouseleave', function () {
+            uploadBtn.style.display = "none";
+        });
+
+        //lets work for image showing functionality when we choose an image to upload
+
+        //when we choose a foto to upload
+
+        file.addEventListener('change', function () {
+            //this refers to file
+            const choosedFile = this.files[0];
+
+            if (choosedFile) {
+
+                const reader = new FileReader(); //FileReader is a predefined function of JS
+
+                reader.addEventListener('load', function () {
+                    img.setAttribute('src', reader.result);
+                });
+
+                reader.readAsDataURL(choosedFile);
+            }
+        });
+
+
+        // Form hide and show using jquery
+        $(document).ready(function () {
+            $("#form1").hide()
+            $("#btn1").click(function () {
+                $("#form1").toggle()
+            })
+        })
+
+        $(document).ready(function () {
+            $("#form2").hide()
+            $("#btn2").click(function () {
+                $("#form2").toggle()
+            })
+        })
+        $(document).ready(function () {
+            $("#form3").hide()
+            $("#btn3").click(function () {
+                $("#form3").toggle()
+            })
+        })
+
+    </script>
+
+    {% endblock %}
