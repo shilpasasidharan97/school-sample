@@ -2,19 +2,18 @@ from __future__ import division
 from datetime import datetime
 from distutils.command.upload import upload
 import email
+from email.policy import default
 from django.db import models
 
 # Create your models here.
 
 class TeacherBasic(models.Model):
     t_id=models.AutoField(primary_key=True)
-    t_profile=models.ImageField(upload_to='teachers/')
+    t_profile=models.ImageField(upload_to='teachers/',default="adminapp/static/images/default.jpg")
     t_name=models.CharField(max_length=20)
     gender=models.CharField(max_length=7)
     dob=models.DateField()
     age=models.IntegerField()
-    religion=models.CharField(max_length=15)
-    cast=models.CharField(max_length=10)
     place=models.CharField(max_length=20)
     district=models.CharField(max_length=20,default="")
     nationality=models.CharField(max_length=20)
@@ -50,8 +49,6 @@ class StudentDetails(models.Model):
     gender=models.CharField(max_length=7)
     dob=models.DateField()
     age=models.IntegerField()
-    religion=models.CharField(max_length=15)
-    cast=models.CharField(max_length=10)
     place=models.CharField(max_length=20)
     district=models.CharField(max_length=20)
     nationality=models.CharField(max_length=20)

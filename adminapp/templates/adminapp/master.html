@@ -26,6 +26,7 @@
 
     <!--css3-->
     <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 
     <!-- javascript CDN Link -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -150,41 +151,26 @@
                         </button>
 
                         <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
-                            id="navbarSupportedContent" style="margin-left: 700px;">
+                            id="navbarSupportedContent" style="margin-left: 900px;">
                             <ul class="nav navbar-nav ml-auto">
 
-                                <span class="nav-link">Welcome {{admin.username | capfirst}}</span>
-                                <a class="nav-link" href="#"> Change password </a>
-                                <a class="nav-link" href="{% url 'adminapp:logout' %}"> logout </a>
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="material-icons">apps</span>
-                                    </a>
-                                </li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">&nbsp;&nbsp;
+                                        <span class="material-icons">person</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        {{admin.username | capfirst}}
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="material-icons">person</span>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="material-icons">settings</span>
-                                    </a>
-                                </li> -->
+                                        &nbsp;&nbsp;
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <a class="dropdown-item" href="#"> Home </a>
+                                        <a class="dropdown-item" href="#">Change Password </a>
+                                        <a class="dropdown-item" href="{% url 'adminapp:logout' %}"> Logout </a>
+                                        <a class="dropdown-item" href="#"> Setting </a>
+                                    </div>
+                                </div>
                             </ul>
                         </div>
-                        <!-- <div class="dropdown">
-                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Dropdown button
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                          </div> -->
+
                     </div>
                 </nav>
             </div>
@@ -217,7 +203,9 @@
         });
     </script>
 
+    <style>
 
+    </style>
 </body>
 
 </html>

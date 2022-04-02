@@ -1,0 +1,34 @@
+session 
+cookies
+web server
+web  application----working
+html tag------
+static page with ex
+dynamic page
+git  & commands
+AGILE
+CI &CD
+WATERFALL MODEL
+JS
+loop
+conditional statement
+loop control statements
+switch
+function
+data types
+object
+dom
+event handlers
+database ddl dml
+joins
+functions
+group by
+cloud architecture
+shared hosting
+pogramming language
+complier and interpreter
+memory working during variable declaration
+machine & high level language
+validation.....benefits, type with lanaguage
+
+

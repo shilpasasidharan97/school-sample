@@ -16,4 +16,5 @@ urlpatterns = [
     path('addclass', views.add_class, name='addclass'),
     path('classlist', views.class_list, name='classlist'),
     path('logout',views.logout,name='logout'),
+    # path('changepassword',views.change_password,name="changepassword"),
 ]
