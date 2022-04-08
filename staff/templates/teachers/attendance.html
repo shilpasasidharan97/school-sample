@@ -1,0 +1,101 @@
+{% extends 'staff_master.html' %}
+{% block content %}
+
+{% load static %}
+
+<style>
+    table.table td a.edit {
+        color: blue;
+        align-items: center  ;
+}
+</style>
+
+
+<div class="container">
+    
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div>
+                    <label for="">Select date</label>
+                    <input type="date" name="date" class="btn btn-outline-info">
+                </div><br><br>
+
+
+                <table class="table align-middle mb-0 bg-white">
+
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th colspan="3" style="text-align: center;">Attendence</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                        {% for std in students %}
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{std.s_profile.url}}" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                    <div class="ms-3">
+                                        <p class="text-muted mb-0">{{std.s_name}}</p>
+                                        <p class="text-muted mb-0">{{std.registration_num}}</p>
+                                        <input type="text" name="sid" hidden value="{{std.s_id}}">
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <p class="fw-normal mb-1">
+                                    <button class="btn-success" name="present">Present</button>
+                                    <!-- <a class="btn btn-success" name href="#" role="button">Present</a> -->
+                                </p>
+                            </td>
+
+                            <td>
+                                <p class="fw-normal mb-1">
+                                    <button class="btn-warning" name="halfday">Half day</button>
+                                    <!-- <a class="btn btn-warning" href="#" role="button">Half day</a> -->
+                                </p>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">
+                                    <button class="btn-danger" name="absent">Absent</button>
+                                    <!-- <a class="btn btn-danger" href="#" role="button">Absent</a> -->
+                                </p>
+                            </td>
+                            <td>
+                                <a href="#editStudentModal" class="edit" data-toggle="modal">
+                                    <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        
+                        <tr>
+                            <td>
+                                <a class="btn btn-info" href="#" role="button">submit</a>
+                            </td>
+                        </tr>
+                    
+                </table>
+
+            </form>
+
+
+
+
+
+
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+
+
+
+{% endblock %}

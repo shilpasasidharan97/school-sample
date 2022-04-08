@@ -5,5 +5,5 @@ app_name='students'
 
 urlpatterns = [
     path('studenthome',views.student_home,name='studenthome'),
-    path('studentprofile',views.student_profile,name='studentprofile')
+    path('studentprofile',views.student_profile,name='studentprofile'),
 ]

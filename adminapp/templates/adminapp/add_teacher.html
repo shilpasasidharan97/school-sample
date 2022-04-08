@@ -94,10 +94,18 @@
                 </div><br>
                 <div class="row">
                     <div class="col">
-                        <input type="number" class="form-control col-lg-10" name="class" placeholder="Handling Class">
+                        <select name="class" id="" class="form-control col-lg-10">
+                            {% for c in classes %}
+                                <option value="{{c.classes}}">{{c.classes}}</option>
+                            {% endfor%}
+                        </select>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control col-lg-10" name="division" placeholder="Division">
+                        <select name="division" id="division" class="form-control col-lg-10" aria-placeholder="class">
+                            {% for c in classes %}
+                                <option value="{{c.division}}">{{c.division}}</option>
+                            {% endfor%}
+                        </select>
                     </div>
                     <div class="col">
                         <input type="text" class="form-control col-lg-10" name="sub" placeholder="Subject">
@@ -210,7 +218,7 @@
 
 
         // Form hide and show using jquery
-        $(document).ready(function () {
+        {% comment %} $(document).ready(function () {
             $("#form1").hide()
             $("#btn1").click(function () {
                 $("#form1").toggle()
@@ -227,7 +235,7 @@
             $("#btn3").click(function () {
                 $("#form3").toggle()
             })
-        })
+        }) {% endcomment %}
 
     </script>
 

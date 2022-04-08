@@ -6,10 +6,18 @@ from email.policy import default
 from django.db import models
 
 # Create your models here.
+class ClassList(models.Model):
+    c_id=models.AutoField(primary_key=True)
+    classes=models.IntegerField()
+    division=models.CharField(max_length=2)
+    strength=models.IntegerField(default=0)
+
+    class Meta:
+        db_table='classes'
 
 class TeacherBasic(models.Model):
     t_id=models.AutoField(primary_key=True)
-    t_profile=models.ImageField(upload_to='teachers/',default="adminapp/static/images/default.jpg")
+    t_profile=models.ImageField(upload_to='teachers/')
     t_name=models.CharField(max_length=20)
     gender=models.CharField(max_length=7)
     dob=models.DateField()
@@ -20,8 +28,8 @@ class TeacherBasic(models.Model):
     aadhar_num=models.CharField(max_length=15)
     email_id=models.CharField(max_length=25)
     phone_number=models.CharField(max_length=15)
-    handling_class=models.IntegerField()
-    division=models.CharField(max_length=2,default="")
+    # handling_class=models.IntegerField()
+    # division=models.CharField(max_length=2,default="")
     subject=models.CharField(max_length=15)
     qualification=models.CharField(max_length=30)
     college_name=models.CharField(max_length=50)
@@ -29,6 +37,7 @@ class TeacherBasic(models.Model):
     instituation_name=models.CharField(max_length=50,blank= True,null = True)
     year_of_experience=models.IntegerField(blank= True,null = True)
     experience_certificate=models.FileField(upload_to='teachers/',null = True)
+    classlist=models.ForeignKey(ClassList,on_delete=models.CASCADE,default=0)
 
     class Meta:
         db_table='teachers'
@@ -42,7 +51,7 @@ class AdminDetails(models.Model):
         db_table='adminlogin'
 
 
-class StudentDetails(models.Model):
+class  StudentDetails(models.Model):
     s_id=models.AutoField(primary_key=True)
     s_profile=models.ImageField(upload_to='students/')
     s_name=models.CharField(max_length=20)
@@ -55,9 +64,9 @@ class StudentDetails(models.Model):
     aadhar_num=models.CharField(max_length=20)
     email_id=models.CharField(max_length=25)
     phone_number=models.CharField(max_length=20)
-    registration_num=models.IntegerField()
-    classs=models.IntegerField()
-    division=models.CharField(max_length=1)
+    registration_num=models.CharField(max_length=50)
+    # classs=models.IntegerField(default=0)
+    # division=models.CharField(max_length=5,default="")
     father_name=models.CharField(max_length=20)
     father_occupation=models.CharField(max_length=20,blank= True,null = True)
     mother_name=models.CharField(max_length=20)
@@ -65,18 +74,12 @@ class StudentDetails(models.Model):
     parents_phone=models.CharField(max_length=20)
     parents_email=models.CharField(max_length=30)
     address=models.CharField(max_length=60,blank= True,null = True)
+    classes=models.ForeignKey(ClassList,on_delete=models.CASCADE,default="")
 
     class Meta:
         db_table='students'
 
-class ClassList(models.Model):
-    c_id=models.AutoField(primary_key=True)
-    classes=models.IntegerField()
-    division=models.CharField(max_length=2)
-    strength=models.IntegerField(default=0)
 
-    class Meta:
-        db_table='classes'
 
 
 class ClassSchedule(models.Model):

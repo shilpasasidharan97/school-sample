@@ -15,6 +15,7 @@ urlpatterns = [
     path('manageparents', views.manage_parents, name='manageparents'),
     path('addclass', views.add_class, name='addclass'),
     path('classlist', views.class_list, name='classlist'),
+    path('deleteclass/<int:cid>',views.delete_class,name='deleteclass'),
     path('logout',views.logout,name='logout'),
-    # path('changepassword',views.change_password,name="changepassword"),
+    path('changepassword',views.change_password,name="changepassword"),
 ]

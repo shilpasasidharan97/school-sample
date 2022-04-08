@@ -36,7 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for cl in classschedule %}
+                {% for cl in classlist %}
                 <tr>
                     <td>
                         <span class="custom-checkbox">
@@ -44,15 +44,15 @@
                             <label for="checkbox5"></label>
                         </span>
                     </td>
-                    <td>{{cl.classes.classes}}</td>
-                    <td>{{cl.classes.division}}</td>
-                    <td>{{cl.teacher.t_name}}</td>
-                    <td>{{cl.classes.strength}}</td>
-                    <td>{{cl.teacher.phone_number}}</td>
+                    <td>{{cl.classlist.classes}}</td>
+                    <td>{{cl.classlist.division}}</td>
+                    <td>{{cl.t_name}}</td>
+                    <td>{{cl.classlist.strength}}</td>
+                    <td>{{cl.phone_number}}</td>
                     <td>
                         <a href="#editParentModal" class="edit" data-toggle="modal"><i class="material-icons"
                                 data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                        <a href="#deleteParentModal" class="delete" data-toggle="modal"><i class="material-icons"
+                        <a href="{% url 'adminapp:deleteclass' c.c_id %} " class="delete" data-toggle="modal"><i class="material-icons"
                                 data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                     </td>
                 </tr>

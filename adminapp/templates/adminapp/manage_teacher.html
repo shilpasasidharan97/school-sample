@@ -56,12 +56,22 @@
                             <label for="checkbox5"></label>
                         </span>
                     </td>
-                    <td>{{t.t_id}}
-                        <img src="{{t.t_profile.url}}" alt="" width="50px" height="50px"></td>
+                    <td>
+                        {% if t.t_profile %}
+                        <div class="d-flex align-items-center">
+                            <img src="{{t.t_profile.url}}" alt="" width="50px" height="50px" class="rounded-circle">
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">{{s.registration_num}}</p>
+                            </div>
+                        </div>
+                        {% comment %} <img src="{{t.t_profile.url}}" alt="" width="50px" height="50px"></td> {% endcomment %}
+                        {% else %}
+                        <img src="adminapp\static\images\default.png " alt="" width="50px" height="50px"></td>
+                        {% endif %}
                     <td>{{t.t_name}}</td>
                     <td>{{t.subject}}</td>
-                    <td>{{t.handling_class}}</td>
-                    <td>{{t.division}}</td>
+                    <td>{{t.classlist.classes}}</td>
+                    <td>{{t.classlist.division}}</td>
                     <td>85%</td>
                     <td>{{t.phone_number}}</td>
                     <td>

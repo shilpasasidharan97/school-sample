@@ -57,12 +57,17 @@
                             <label for="checkbox5"></label>
                         </span>
                     </td>
-                    <td>{{s.s_id}}
-                        <img src="{{s.s_profile.url}}" alt="" width="50px" height="50px">
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="{{s.s_profile.url}}" alt="" width="50px" height="50px" class="rounded-circle">
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">{{s.registration_num}}</p>
+                            </div>
+                        </div>
                     </td>
                     <td>{{s.s_name}}</td>
-                    <td>{{s.classs}}</td>
-                    <td>{{s.division}}</td>
+                    <td>{{s.classes.classes}}</td>
+                    <td>{{s.classes.division}}</td>
                     <td>250</td>
                     <td>85%</td>
                     <td>{{s.parents_phone}}</td>

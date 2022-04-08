@@ -15,169 +15,117 @@
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
+                {% for p in profile %}
                 <div class="col-sm-6">
-                    <h2>Staff name <b>(ID)</b></h2>
+                    <h2>{{p.t_name}}</h2>
                 </div>
+                {% endfor %}
             </div>
         </div>
 
-            <!-- Upload Profile Photo -->
-            {% for p in profile %}
-            <div class="row">
-                <div class="col-lg-6 col-sm-12">
-                    <div class="profile-pic-div">
-                        <img src="{{p.t_profile.url}}" class="img-fluid" style="height: 250px;" id="photo">
-                        <input type="file" id="file" name="profile">
-                        <label for="file" id="uploadBtn">Choose Photo</label>
-                    </div>
+        <!-- Upload Profile Photo -->
+        {% for p in profile %}
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="profile-pic-div">
+                    <img src="{{p.t_profile.url}}" class="img-fluid" style="height: 250px;" id="photo">
+                    <input type="file" id="file" name="profile">
+                    <label for="file" id="uploadBtn">Choose Photo</label>
                 </div>
-            </div><br><br><br><br><br>
-
-            <!-- Table starting  -->
-            <div class="row"></div>
-
-
-            <!-- Basic Details -->
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" id="btn1" type="button">Basic Details</button>
             </div>
-            <div id="form1" style="border: 1px grey solid;"><br>
-                <div class="row">
-                    <div class="col">
-                        <!--Name field-->
-                        <label for="">Name:</label>
-                        <label for=""><h6>{{p.t_name}}</h6></label>
-                    </div>
-                    <div class="col">
-                        <div class="">
-                            <label for="">Gender:</label>
-                        <label for=""><h6>{{p.gender}}</h6></label>
+        </div><br><br><br><br><br>
+
+        <!-- Table starting  -->
+
+
+        <!-- Basic Details -->
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" id="btn1" type="button">Basic Details</button>
+        </div>
+
+        <div id="form1"><br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-group">
+                        <li class="list-group-item">Name :{{p.t_name}}</li>
+                        <li class="list-group-item">Date of birth: {{p.dob}}</li>
+                        <li class="list-group-item">Place : {{p.place}}</li>
+                        <li class="list-group-item">Nationality :{{p.nationality}}</li>
+                        <li class="list-group-item">Email ID :{{p.email_id}}</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="list-group">
+                        <li class="list-group-item">Gender: {{p.gender}}</li>
+                        <li class="list-group-item">Age : {{p.age}}</li>
+                        <li class="list-group-item">District :{{p.district}}</li>
+                        <li class="list-group-item">Aadhar Number :{{p.aadhar_num}}</li>
+                        <li class="list-group-item">Phone Number :{{p.phone_number}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <a href="#" class="btn btn-success btn-sm active" role="button" aria-pressed="true" style="margin-left: 950px;"
+            id="view">
+            <span class="material-icons">visibility</span>
+            view full profile
+        </a>
+
+        <div id="hide">
+            <div id="form">
+                <div class="d-grid gap-2" style="margin-top:5px;">
+                    <button class="btn btn-primary" id="btn2" type="button">Educational Details</button>
+                </div><br>
+
+                <div id="form2">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-group">
+                                <li class="list-group-item">Qualification :{{p.qualification}}</li>
+                                <!-- <li class="list-group-item">Qualification :{{p.qualification}}</li> -->
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-group">
+                                <li class="list-group-item">College Name: {{p.college_name}}</li>
+                                <li class="list-group-item"><a href="{{p.quali_certificate.url}}" target="_blank" class="btn btn-success btn-sm">Qualification Certificate</a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col">
-                        <label for="">Date of birth:</label>
-                        <label for=""><h6>{{p.dob}}</h6></label>
-                    </div>
-                </div><br>
+                </div>
 
 
-                <div class="row">
-                    
-                    <div class="col">
-                        <label for="">Age:</label>
-                        <label for=""><h6>{{p.age}}</h6></label>
-                    </div>
-                    <div class="col">
-                        <label for="">Religion:</label>
-                        <label for=""><h6>{{p.religion}}</h6></label>
-                    </div>
-                    <div class="col">
-                        <label for="">Cast:</label>
-                        <label for=""><h6>{{p.cast}}</h6></label>
-                    </div>
-                </div><br>
 
-                <div class="row">
-                    <div class="col">
-                        <label for="">place:</label>
-                        <label for=""><h6>{{p.place}}</h6></label>
-                    </div>
-                    <div class="col">
-                        <label for="">District:</label>
-                        <label for=""><h6>{{p.district}}</h6></label>
-                    </div>
-                    <div class="col">
-                        <label for="">Nationality:</label>
-                        <label for=""><h6>{{p.nationality}}</h6></label>
-                    </div>
-                </div><br>
 
-                <div class="row">
-                    <div class="col">
-                        <label for="">Aadhar Number:</label>
-                        <label for=""><h6>{{p.aadhar_num}}</h6></label>
-                    </div>
-                    <div class="col">
-                        <label for="">Email Id:</label>
-                        <label for=""><h6>{{p.email_id}}</h6></label>
-                    </div>
-                    <div class="col">
-                        <label for="">Phone Number:</label>
-                        <label for=""><h6>{{p.phone_number}}</h6></label>
-                    </div>
-                </div><br>
 
-                
-                <div class="row">
-                    <div class="col">
-                        <label for="">Handling Class:</label>
-                        <label for=""><h6>{{p.handling_class}}</h6></label>
-                    </div>
-                    <div class="col">
-                        <label for="">Division:</label>
-                        <label for=""><h6>{{p.division}}</h6></label>
-                    </div>
-                    <div class="col">
-                        <label for="">Subject:</label>
-                        <label for=""><h6>{{p.subject}}</h6></label>
-                    </div>
-                    
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" id="btn3" type="button">Professional Details</button>
                 </div><br>
+    
+                <div id="form3">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-group">
+                                <li class="list-group-item">Institution : {{p.instituation_name}}</li>
+                            </ul>
+                            
+                        </div>
+                    </div><br>
+                        <div class="col-sm-6">
+                            <ul class="list-group">
+                                <li class="list-group-item">Year of Experience : {{p.year_of_experience}}</li><br>
+                                <li class="list-group-item"><a href="{{p.experience_certificate}}" target="_blank" class="btn btn-success btn-sm">Experience Certificate</a></li>
+                            </ul>
+                        </div>
+                    <br>
+                </div>
             </div>
+        </div>
+        {% endfor %}
 
 
-            <!-- EDUCATIONAL DETAILS -->
-            <div class="d-grid gap-2" style="margin-top:5px;">
-                <button class="btn btn-primary" id="btn2" type="button">Educational Details</button>
-            </div><br>
-
-            <div id="form2">
-                <div class="row">
-                    <div class="col">
-                        <label for="">Qualification:</label>
-                        <label for=""><h6>{{p.qualification}}</h6></label>
-                    </div>
-                    <div class="col">
-                        <label for="">College Name:</label>
-                        <label for=""><h6>{{p.college_name}}</h6></label>
-                    </div>
-                </div><br>
-                <!-- <div class="row">
-                    <div class="col">
-                        <label for="">Subject:</label>
-                        <label for=""></label>
-                    </div>
-                </div><br> -->
-            </div>
-
-
-            <!-- Professional Details -->
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" id="btn3" type="button">Professional Details</button>
-            </div><br>
-
-            <div id="form3">
-                <div class="row">
-                    <div class="col">
-                        <label for="">Institution :</label>
-                        <label for=""><h6>{{p.instituation_name}}</h6></label>
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col">
-                        <label for="">Year of experience:</label>
-                        <label for=""><h6>{{p.year_of_experience}}</h6></label>
-                    </div>
-                </div><br>
-            </div>
-            {% endfor %}
-            <!-- <div class="d-grid gap-2" style="margin-top:5px;">
-                <input type="submit" class="btn btn-success">
-            </div> -->
-            
-            <a href="#" class="btn btn-success btn-md active" role="button" aria-pressed="true" style="margin-left: 1000px;">UPDATE</a>
-
-        
 
 
 
@@ -229,9 +177,15 @@
 
         // Form hide and show using jquery
         $(document).ready(function () {
-            $("#form1").hide()
             $("#btn1").click(function () {
                 $("#form1").toggle()
+            })
+        })
+        $(document).ready(function () {
+            $("#hide").hide()
+            $("#view").click(function () {
+                $("#hide").toggle()
+                $("#view").hide()
             })
         })
         $(document).ready(function () {
@@ -273,4 +227,4 @@
 
 
 
-{% endblock %}
+    {% endblock %}

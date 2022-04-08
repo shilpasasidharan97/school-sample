@@ -9,5 +9,5 @@ def student_home(request):
     return render(request,'student_home.html',{'student':student,})
 
 def student_profile(request):
-    student_data=StudentDetails.objects.filter(s_id=request.session['student'])
-    return render(request,'student_profile.html',{'student':student_data,})
+    # student_data=StudentDetails.objects.filter(s_id=request.session['student']),{'student':student_data,}
+    return render(request,'student_profile.html')

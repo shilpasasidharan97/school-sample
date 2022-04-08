@@ -80,7 +80,7 @@
                         <td>
                             <a href="#editParentModal" class="edit" data-toggle="modal"><i class="material-icons"
                                     data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteParentModal" class="delete" data-toggle="modal"><i class="material-icons"
+                            <a href="{% url 'adminapp:deleteclass' c.c_id %}" class="delete" data-toggle="modal"><i class="material-icons"
                                     data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>

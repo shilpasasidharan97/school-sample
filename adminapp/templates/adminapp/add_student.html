@@ -109,11 +109,30 @@
                 </div><br>
                 <div class="row">
                     <div class="col">
-                        <input type="number" class="form-control col-lg-10" name="class" placeholder="Class">
+                        <select name="class" id="" class="form-control col-lg-10">
+                            {% for cl in classes %}
+                                <option value="{{cl.classes}}">{{cl.classes}}</option>
+                            {% endfor%}
+                        </select>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control col-lg-10" name="division" placeholder="Division">
+                        <select name="division" id="division" class="form-control col-lg-10" aria-placeholder="class">
+                            {% for cl in classes %}
+                                <option value="{{cl.division}}">{{cl.division}}</option>
+                            {% endfor%}
+                        </select>
                     </div>
+
+
+
+
+
+                    <!-- <div class="col">
+                        <input type="number" class="form-control col-lg-10"  name="class" placeholder="Class">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control col-lg-10" name="division"  placeholder="Division">
+                    </div> -->
                 </div><br>
             </div>
 
@@ -144,7 +163,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <input type="number" class="form-control col-lg-10" name="pphn" placeholder="Phone Number">
+                        <input type="text" class="form-control col-lg-10" name="pphn" placeholder="Phone Number">
                     </div>
                     <div class="col">
                         <input type="email" class="form-control col-lg-10" name="pemail" placeholder="Email">
@@ -157,6 +176,7 @@
                         <textarea name="address" id="" class="form-control col-lg-10" cols="30" rows="6"
                             placeholder="Address"></textarea>
                     </div>
+                    
                 </div><br>
             </div>
 
@@ -212,25 +232,25 @@
 
 
         // Form hide and show using jquery
-        $(document).ready(function () {
-            $("#form1").hide()
-            $("#btn1").click(function () {
-                $("#form1").toggle()
-            })
-        })
+        // $(document).ready(function () {
+        //     $("#form1").hide()
+        //     $("#btn1").click(function () {
+        //         $("#form1").toggle()
+        //     })
+        // })
 
-        $(document).ready(function () {
-            $("#form2").hide()
-            $("#btn2").click(function () {
-                $("#form2").toggle()
-            })
-        })
-        $(document).ready(function () {
-            $("#form3").hide()
-            $("#btn3").click(function () {
-                $("#form3").toggle()
-            })
-        })
+        // $(document).ready(function () {
+        //     $("#form2").hide()
+        //     $("#btn2").click(function () {
+        //         $("#form2").toggle()
+        //     })
+        // })
+        // $(document).ready(function () {
+        //     $("#form3").hide()
+        //     $("#btn3").click(function () {
+        //         $("#form3").toggle()
+        //     })
+        // })
 
     </script>
 

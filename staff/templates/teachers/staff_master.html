@@ -26,6 +26,7 @@
 
     <!--css3-->
     <link rel="stylesheet" href="{% static 'css/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 
     <!-- javascript CDN Link -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -39,10 +40,10 @@
 
     <div class="wrapper">
         <div class="body-overlay"></div>
-
+<!-- linear-gradient(to right, #6600ff 22%, #cc66ff 77%); -->
         <!-- Sidebar  -->
-        <nav id="sidebar" style="background: linear-gradient(to right, #6600ff 22%, #cc66ff 77%);">
-            <div class="sidebar-header" style="background: linear-gradient(to right, #6600ff 22%, #cc66ff 77%);;">
+        <nav id="sidebar" style="background-color:white ">
+            <div class="sidebar-header" style="background-color: white; ">
                 <h3><img src="/static/images/logo.png" class="img-fluid" /><span style="color: navy;"><b>Royal
                             Public</b></span></h3>
             </div>
@@ -58,15 +59,15 @@
                         <span>Profile</span></a>
                 </li>
                 <li class="">
-                    <a href="" class="dashboard"><i class="material-icons">view_list</i>
+                    <a href="{% url 'staff:studentlists'   %}" class="dashboard"><i class="material-icons">view_list</i>
                         <span>Student List</span></a>
                 </li>
                 <li class="">
-                    <a href="" class="dashboard"><i class="material-icons">fact_check</i>
+                    <a href="{% url 'staff:attendance'  %}" class="dashboard"><i class="material-icons">fact_check</i>
                         <span>Add Attandance</span></a>
                 </li>
                 <li class="">
-                    <a href="" class="dashboard"><i class="material-icons">sticky_note_2</i>
+                    <a href="{% url 'staff:mark' %}" class="dashboard"><i class="material-icons">sticky_note_2</i>
                         <span>Marks</span></a>
                 </li>
                 <li class="">
@@ -118,30 +119,28 @@
                         </button>
 
                         <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
-                            id="navbarSupportedContent">
+                            id="navbarSupportedContent" style="margin-left: 1080px;">
                             <ul class="nav navbar-nav ml-auto">
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="material-icons">apps</span>
-                                    </a>
-                                </li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">&nbsp;&nbsp;
+                                        <span class="material-icons">person</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        {{teacher.t_name | capfirst}}
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="material-icons">person</span>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="material-icons">settings</span>
-                                    </a>
-                                </li>
+                                        &nbsp;&nbsp;
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <a class="dropdown-item" href="{% url 'staff:staffhome' %}"> Home </a>
+                                        <a class="dropdown-item" href="">Change Password </a>
+                                        <a class="dropdown-item" href="{% url 'staff:logout' %}"> Logout </a>
+                                        <a class="dropdown-item" href="#"> Setting </a>
+                                    </div>
+                                </div>
                             </ul>
                         </div>
 
-                        <span style="color: black;"><h6><i>Welcom {{teacher.t_name|capfirst}}</i></h6></span>
+                        {% comment %} <span style="color: black;"><h6><i>Welcome {{teacher.t_name|capfirst}}</i></h6></span> {% endcomment %}
+                        
                     </div>
                 </nav>
             </div>

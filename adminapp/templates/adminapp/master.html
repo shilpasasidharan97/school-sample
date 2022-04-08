@@ -42,8 +42,8 @@
         <div class="body-overlay"></div>
 
         <!-- Sidebar  -->
-        <nav id="sidebar" style="background-color: rgb(84, 84, 236);">
-            <div class="sidebar-header" style="background-color: rgb(84, 84, 236);;">
+        <nav id="sidebar">
+            <div class="sidebar-header">
                 <h3><img src="/static/images/logo.png" class="img-fluid" /><span style="color: navy;"><b>Royal
                             Public</b></span></h3>
             </div>
@@ -151,7 +151,7 @@
                         </button>
 
                         <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
-                            id="navbarSupportedContent" style="margin-left: 900px;">
+                            id="navbarSupportedContent" style="margin-left: 1080px;">
                             <ul class="nav navbar-nav ml-auto">
 
                                 <div class="dropdown">
@@ -163,7 +163,7 @@
                                     </button>
                                     <div class="dropdown-content">
                                         <a class="dropdown-item" href="#"> Home </a>
-                                        <a class="dropdown-item" href="#">Change Password </a>
+                                        <a class="dropdown-item" href="{% url 'adminapp:changepassword' %}">Change Password </a>
                                         <a class="dropdown-item" href="{% url 'adminapp:logout' %}"> Logout </a>
                                         <a class="dropdown-item" href="#"> Setting </a>
                                     </div>
